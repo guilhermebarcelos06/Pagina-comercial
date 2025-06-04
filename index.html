@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Elegante - Portfólio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-transparent text-white transition-all duration-300 ease-in-out" id="main-header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-bold playfair">Sua Marca</a> <!-- Substitua "Sua Marca" -->
+            <nav class="hidden md:flex space-x-1 items-center">
+                <a href="#hero" class="menu-item">Início</a>
+                <a href="#quem-somos" class="menu-item">Quem Somos</a>
+                <a href="#servicos" class="menu-item">O Que Fazemos</a>
+                <a href="#contato" class="menu-item">Contato</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none mobile-menu-button p-2">
+                    <span class="block w-6 h-0.5 bg-white my-1 transition-transform duration-300 ease-in-out"></span>
+                    <span class="block w-6 h-0.5 bg-white my-1 transition-opacity duration-300 ease-in-out"></span>
+                    <span class="block w-6 h-0.5 bg-white my-1 transition-transform duration-300 ease-in-out"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-black bg-opacity-95 absolute top-full left-0 right-0 opacity-0 transform -translate-y-full -z-10 transition-all duration-300 ease-in-out">
+            <a href="#hero" class="mobile-menu-link">Início</a>
+            <a href="#quem-somos" class="mobile-menu-link">Quem Somos</a>
+            <a href="#servicos" class="mobile-menu-link">O Que Fazemos</a>
+            <a href="#contato" class="mobile-menu-link">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Top with Slideshow) -->
+    <section id="hero" class="hero-section flex items-center justify-center">
+        <!-- Substitua as URLs das imagens de placeholder pelas suas imagens -->
+        <div class="hero-slide active" style="background-image: url('https://placehold.co/1920x1080/A0AEC0/FFFFFF?text=Imagem+Elegante+1&font=playfairdisplay');"></div>
+        <div class="hero-slide" style="background-image: url('https://placehold.co/1920x1080/718096/FFFFFF?text=Imagem+Elegante+2&font=playfairdisplay');"></div>
+        <div class="hero-slide" style="background-image: url('https://placehold.co/1920x1080/4A5568/FFFFFF?text=Imagem+Elegante+3&font=playfairdisplay');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content p-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 playfair hero-title-animate">Transformando Ideias em Presença Digital</h1>
+            <p class="text-xl md:text-2xl mb-8 hero-subtitle-animate">Crio websites elegantes e funcionais que elevam sua marca.</p>
+            <a href="#servicos" class="bg-white text-gray-800 hover:bg-gray-200 font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 hero-button-animate">Conheça Nossos Serviços</a>
+        </div>
+    </section>
+
+    <!-- Quem Somos Section -->
+    <section id="quem-somos" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 playfair">Quem Somos</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+                Sou apaixonado por design e tecnologia, dedicado a criar soluções web que não apenas impressionam visualmente,
+                mas também entregam resultados tangíveis para nossos clientes. Minha abordagem combina criatividade com estratégia
+                para construir uma presença online impactante. 
+            </p>
+            <!-- Substitua a URL da imagem de placeholder -->
+            <img src="https://placehold.co/800x400/E2E8F0/4A5568?text=Nossa+Equipe+ou+Escritório&font=montserrat" alt="Imagem representando a equipe ou escritório" class="mx-auto rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- O Que Fazemos Section (Serviços) -->
+    <section id="servicos" class="py-16 md:py-24 bg-gray-100 fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 playfair">O Que Faço</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Adapte os textos e ícones dos serviços -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="service-title">Desenvolvimento de Sites</h3>
+                    <p class="service-description">Criação de sites responsivos, modernos e otimizados para performance e SEO, totalmente personalizados para suas necessidades.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3 class="service-title">Design UI/UX Elegante</h3>
+                    <p class="service-description">Foco na experiência do usuário com interfaces intuitivas e um design visual que reflete a sofisticação da sua marca.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-store"></i></div>
+                    <h3 class="service-title">Lojas Virtuais (E-commerce)</h3>
+                    <p class="service-description">Desenvolvo plataformas de e-commerce robustas e seguras para você vender seus produtos online com eficiência.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="service-title">Otimização SEO</h3>
+                    <p class="service-description">Melhoro a visibilidade do seu site nos motores de busca para atrair mais tráfego qualificado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="service-title">Aplicações Web</h3>
+                    <p class="service-description">Construção de aplicações web customizadas para otimizar processos e engajar usuários.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="service-title">Consultoria e Suporte</h3>
+                    <p class="service-description">Ofereço consultoria especializada e suporte contínuo para garantir o sucesso do seu projeto digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 md:py-24 bg-gray-800 text-white fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 playfair">Entre em Contato</h2>
+            <div class="max-w-3xl mx-auto bg-white text-gray-800 p-8 md:p-12 rounded-lg shadow-xl">
+                <form id="contact-form"> <!-- Considere adicionar um action="URL_DO_SEU_BACKEND" method="POST" -->
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nome Completo</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Assunto</label>
+                        <input type="text" id="subject" name="subject" class="form-input">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Sua Mensagem</label>
+                        <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-12 text-center">
+                    <h3 class="text-xl font-semibold mb-4 playfair">Outras Formas de Contato</h3>
+                    <!-- Substitua pelos seus dados de contato -->
+                    <p class="contact-info"><i class="fas fa-phone-alt contact-icon"></i> (XX) XXXXX-XXXX</p>
+                    <p class="contact-info"><i class="fas fa-envelope contact-icon"></i> seuemail@dominio.com</p>
+                    <p class="contact-info"><i class="fas fa-map-marker-alt contact-icon"></i> Sua Cidade, Seu Estado</p>
+                    <div class="mt-6 flex justify-center space-x-4">
+                        <!-- Substitua # pelos links das suas redes sociais -->
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Icon -->
+    <!-- Substitua SEUNUMERODOWHATSAPP pelo seu número no formato internacional, ex: 55119XXXXXXXX -->
+    <a href="https://wa.me/SEUNUMERODOWHATSAPP?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+        <div class="container mx-auto px-6">
+            <p class="playfair text-xl mb-2">Sua Marca</p> <!-- Substitua "Sua Marca" -->
+            <p class="mb-1 text-sm">Dev. Junior Guilherme S. Barcelos 2025</p>
+            <p class="text-xs">Todos os direitos reservados.</p>
+            <!-- Back to top link -->
+             <a href="#hero" class="mt-4 inline-block text-indigo-400 hover:text-indigo-300 transition duration-300 text-sm">
+                Voltar ao Topo <i class="fas fa-arrow-up ml-1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

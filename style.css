@@ -1,0 +1,263 @@
+  /* =============== Conteúdo do style.css =============== */
+        /* General body and font styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333; /* Default text color for body */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            line-height: 1.6;
+        }
+
+        /* Styles for headings and elements with .playfair class */
+        h1, h2, h3, .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header styles */
+        #main-header.scrolled {
+            background-color: rgba(0, 0, 0, 0.85); /* Darker semi-transparent background when scrolled */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Desktop Menu item styling */
+        .menu-item {
+            padding: 0.75rem 1rem; /* Increased padding for better clickability */
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 0.9rem; /* Slightly smaller font for menu items */
+            font-weight: 500; /* Medium weight */
+        }
+
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.15); /* More visible highlight on hover */
+            color: #fff; /* Ensure text remains white or light on hover */
+        }
+
+        /* Mobile Menu Button (hamburger) icon transition */
+        .mobile-menu-button.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg); /* Adjusted for my-1 margin */
+        }
+
+        .mobile-menu-button.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg); /* Adjusted for my-1 margin */
+        }
+
+        /* Mobile Menu container */
+        #mobile-menu.open {
+            opacity: 1;
+            transform: translateY(0);
+            z-index: 40; /* Ensure it's above content but below fixed header if needed */
+        }
+
+        .mobile-menu-link {
+            display: block;
+            text-align: center;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .mobile-menu-link:last-child {
+            border-bottom: none;
+        }
+        .mobile-menu-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+
+        /* Hero section styles */
+        .hero-section {
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            overflow: hidden;
+            background-color: #718096; /* Fallback background color (Tailwind gray-600) */
+        }
+
+        /* Individual hero slide styles */
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother, slightly longer transition */
+            z-index: 1;
+        }
+
+        /* Active hero slide style */
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        /* Overlay for hero section to improve text readability */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%); /* Subtle gradient overlay */
+            z-index: 2;
+        }
+
+        /* Content within the hero section */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white; /* Text color for hero content */
+        }
+
+        /* Animations for Hero Content */
+        .hero-title-animate {
+            animation: fadeInDown 1s ease-out 0.3s forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .hero-subtitle-animate {
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .hero-button-animate {
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* Floating WhatsApp icon styles */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px; /* Adjusted position */
+            right: 30px;  /* Adjusted position */
+            background-color: #25D366; /* WhatsApp green */
+            color: #FFF; /* White icon color */
+            border-radius: 50%; /* Circular shape */
+            text-align: center;
+            font-size: 28px; /* Slightly smaller icon */
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.25); /* Softer shadow */
+            z-index: 100; /* Ensure it's above other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            background-color: #128C7E; /* Darker WhatsApp green on hover */
+        }
+
+        /* Fade-in animation for sections on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px); /* Slightly more pronounced effect */
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Service Card Styling */
+        .service-card {
+            background-color: white;
+            padding: 2rem; /* Equivalent to p-8 */
+            border-radius: 0.5rem; /* Equivalent to rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* Equivalent to shadow-lg */
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+            text-align: center; /* Center content within card */
+        }
+        .service-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* Equivalent to shadow-xl */
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+        .service-icon {
+            font-size: 2.5rem; /* text-3xl is 1.875rem, this is larger */
+            color: #4f46e5; /* text-indigo-600 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .service-title {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* semibold */
+            margin-bottom: 0.75rem; /* mb-3 */
+            font-family: 'Playfair Display', serif;
+        }
+        .service-description {
+            color: #4b5563; /* text-gray-600 */
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Form Input Styling */
+        .form-input {
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); /* shadow */
+            appearance: none;
+            border-width: 1px;
+            border-color: #e2e8f0; /* Tailwind gray-300 */
+            border-radius: 0.375rem; /* rounded */
+            width: 100%;
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            color: #1a202c; /* text-gray-900 */
+            line-height: 1.25; /* leading-tight */
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #4f46e5; /* focus:ring-indigo-500 */
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3); /* focus:ring-2 focus:ring-opacity-50 */
+        }
+
+        /* Contact Info Styling */
+        .contact-info {
+            color: #4b5563; /* text-gray-600 */
+            margin-bottom: 0.5rem; /* mb-2 */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center if you want icons and text centered together */
+        }
+        .contact-icon {
+            margin-right: 0.75rem; /* mr-2 */
+            color: #4f46e5; /* text-indigo-600 */
+            font-size: 1.1rem;
+        }
+
+        /* Social Link Styling */
+        .social-link {
+            color: #4f46e5; /* text-indigo-600 */
+            transition: color 0.3s ease;
+            font-size: 1.75rem; /* text-2xl */
+        }
+        .social-link:hover {
+            color: #3730a3; /* text-indigo-800 */
+        }
